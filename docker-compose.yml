@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: redis
+    ports:
+      - 5454:6379
+  frea:
+    build: .
+    ports:
+      - 3030:8080
+    depends_on:
+      - db
